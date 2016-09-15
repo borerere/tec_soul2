@@ -35,7 +35,10 @@
     <ClCompile Include="linear_search.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="binary_serch.cpp">
+    <ClCompile Include="organization_search.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_search.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

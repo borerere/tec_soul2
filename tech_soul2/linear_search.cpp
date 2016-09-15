@@ -7,14 +7,14 @@
 #define NOT_FOUND	(-1)
 
 
-int linear_search(int SerchValue, int *array ,int arrayLength) {
+int linear_search(int SerchValue, int *array ,int arraySize) {
 	int index = 0;
 
 	/*”z—ñ‚Ì”ÍˆÍ“à‚Å–Ú“I‚Ì’l‚ð’T‚·*/
-	while ( index < arrayLength && array[index] != SerchValue) {
+	while ( index < arraySize && array[index] != SerchValue) {
 		index++;
 	}
-	if (index < arrayLength) {
+	if (index < arraySize) {
 		return index;
 	}
 	return NOT_FOUND;
