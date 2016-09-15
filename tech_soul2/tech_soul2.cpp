@@ -8,6 +8,7 @@ using namespace std;
 /*関数プロトタイプ宣言*/
 int linear_search(int SerchValue, int *array, int arraySize);
 int binary_search(int SerchValue, int *array, int left, int right);
+int organization_search(int SerchValue, int *array, int arraySize);
 
 /*定数*/
 #define ARRAY_MAX_SIZE	(10)
@@ -21,8 +22,10 @@ int main()
 	cout << "検索値を入力してください" << endl;
 	cin >> input_SerchValue;
 
-//	ret = linear_search(input_SerchValue,array,ARRAY_MAX_SIZ);
-	ret =  binary_search(input_SerchValue, array, 0, ARRAY_MAX_SIZE - 1);
+//	ret = linear_search(input_SerchValue,array,ARRAY_MAX_SIZE);
+//	ret =  binary_search(input_SerchValue, array, 0, ARRAY_MAX_SIZE - 1);
+	ret = organization_search(input_SerchValue, array, ARRAY_MAX_SIZE);
+
 	if (ret == -1) {
 		cout << "検索値は存在しません。" << endl;
 	}
