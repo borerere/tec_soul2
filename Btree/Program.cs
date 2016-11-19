@@ -9,6 +9,9 @@ namespace Btree
 
     class TreeNode
     {
+        // StringBuilderクラスは足し算が速い
+        // Stringの足し算と比べると圧倒的に速い
+        // しかし、それ以外の処理では重い
         StringBuilder output = new StringBuilder();
 
         // publicメンバ
@@ -43,12 +46,11 @@ namespace Btree
 
         public void printNode(TreeNode node)
         {
-
             // 対象ノードの値を出力
             output.Append(node.value);
 
             // 左側の値を出力
-            if (node.left != null){
+            if (node.left != null) {
                 output.Append("(");
                 printNode(node.left);
                 output.Append(",");
@@ -62,7 +64,9 @@ namespace Btree
             } else {
                 output.Append("_)");
             }
-            Console.WriteLine(output);
+            if ((node.left == null) && (node.right == null)){
+                Console.WriteLine(output);
+            }
         }
 
         // privateメソッド
@@ -81,12 +85,14 @@ namespace Btree
         {
             TreeNode TN = new TreeNode();
 
+            // 乱数を作成
+            Random random = new Random(DateTime.Now.Millisecond);
             for (int i = 0; i< 10; i++){
-                Random randam = new Random(i);
-                int randamuNumber = randam.Next(30);
-                TN.insertNode(randamuNumber,TN);
+                int randomNumber = random.Next(30);
+                TN.insertNode(randomNumber,TN);
             }
             TN.printNode(TN);
+
             Console.ReadLine();
         }
     }
