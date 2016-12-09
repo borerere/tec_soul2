@@ -14,6 +14,9 @@ namespace Dijkstra
     {
         public Form1()
         {
+            var graph = new graph();
+            Node SelectedNode = null;
+
             InitializeComponent();
             this.MouseClick += (sender, e) =>
             {
@@ -32,6 +35,15 @@ namespace Dijkstra
 
         private void Form1_LeftClick(object sender,System.Windows.Forms.MouseEventArgs e)
         {
+            Draw(sender, e);
+        }
+        private void Form1_RightClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+
+        }
+
+        private void Draw(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
             var point = new Point(e.X, e.Y);
             var size = new Size(10, 10);
 
@@ -44,11 +56,6 @@ namespace Dijkstra
                     g.DrawRectangle(EdzePen, rt);
                 }
             }
-
-        }
-        private void Form1_RightClick(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-
         }
 
     }
